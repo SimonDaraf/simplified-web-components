@@ -1,4 +1,4 @@
-# L2-1DV610-SimpleWebComponents
+# Simplified Web Components
 
 ## Table of contents
 * [Introduction](#introduction)
@@ -14,7 +14,7 @@
 * [Licence](#licence)
 
 ## Introduction <a name="introduction"></a>
-The SimpleWebComponents package simplifies the process of using custom web components. Decreasing the amount of boilerplate code needed for each component.
+The SimplifiedWebComponents package simplifies the process of using custom web components. Decreasing the amount of boilerplate code needed for each component.
 
 * ### Dependencies <a name="dependencies"></a>
   * `ES2020`
@@ -24,7 +24,7 @@ The SimpleWebComponents package simplifies the process of using custom web compo
 ## Installation <a name="installation"></a>
 
 * ### Using NPM <a name="using-npm"></a>
-  `npm i simple-web-components`
+  `npm i simplified-web-components`
 
 ## Documentation <a name="documentation"></a>
 
