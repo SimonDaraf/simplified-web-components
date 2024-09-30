@@ -3,7 +3,6 @@
 ## Table of contents
 * [Introduction](#introduction)
     * [Dependencies](#dependencies)
-    * [Known Issues](#known-issues)
 * [Installation](#installation)
     * [Manual](#manual)
     * [Using NPM](#using-npm)
