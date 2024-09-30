@@ -25,3 +25,47 @@ export const createCssTemplateElement = function (cssCode) {
   element.innerHTML = `<style> ${cssCode} </style>`
   return element
 }
+
+/**
+ * Verifies if the given name is a valid html name.
+ *
+ * @param {string} componentName - The name to validate.
+ * @returns {boolean} - An indication whether the name is valid.
+ */
+export const isValidHtmlName = function (componentName) {
+  // Validate html naming convention
+  if (!(/[a-z]-[a-z](-[a-z])*/.test(componentName))) {
+    return false
+  }
+  return true
+}
+
+/**
+ * Verifies that the given name is not any of the forbidden names declared by.
+ *
+ * @see {@link https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name}
+ * @param {string} componentName - The name to validate.
+ * @returns {boolean} - If name is not one of the forbidden names.
+ */
+export const noForbiddenHtmlNames = function (componentName) {
+  for (const name in forbiddenNames) {
+    if (componentName === name) {
+      return false
+    }
+  }
+  return true
+}
+
+/**
+ * Enum like object with forbidden html names.
+ */
+const forbiddenNames = Object.freeze({
+  'annotation-xml': 1,
+  'color-profile': 2,
+  'font-face': 3,
+  'font-face-src': 4,
+  'font-face-uri': 5,
+  'font-face-format': 6,
+  'font-face-name': 7,
+  'missing-glyph': 8
+})

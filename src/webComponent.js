@@ -50,11 +50,31 @@ export class WebComponent {
    * @param {HTMLTemplateElement|string} css - The css to render | The url to the CSS file.
    */
   constructor (componentName, html, css) {
-    this.#componentName = componentName
+    this.#setComponentName(componentName)
     this.#fetchHandler = new FetchHandler()
     this.#html = html
     this.#css = css
     this.#registeredEvents = []
+  }
+
+  /**
+   * Validates input for component name.
+   *
+   * @throws {Error} - If new component name is invalid.
+   * @param {string} newComponentName - The new component name.
+   */
+  #setComponentName (newComponentName) {
+    if (typeof (newComponentName) !== 'string') {
+      throw new Error('Invalid type of component name, expected type: string')
+    }
+    if (!htmlHelper.isValidHtmlName(newComponentName)) {
+      throw new Error(`Component name: ${newComponentName} does not match naming convention: [a-z]-[a-z](-[a-z])*`)
+    }
+    if (!htmlHelper.noForbiddenHtmlNames(newComponentName)) {
+      throw new Error(`Component name: ${newComponentName} is a forbidden component name!`)
+    }
+
+    this.#componentName = newComponentName
   }
 
   /**

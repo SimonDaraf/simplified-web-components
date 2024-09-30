@@ -1,6 +1,6 @@
 {
   "name": "simplified-web-components",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "A simplified interface for creating custom web components.",
   "type": "module",
   "exports": {
