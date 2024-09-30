@@ -31,9 +31,56 @@ export class EventContainer {
    * @param {Function} eventFunction - The function to invoke when the event is catched, the function passed needs an argument for the event object.
    */
   constructor (eventName, eventListenerElementID, eventFunction) {
-    this.#eventName = eventName
-    this.#eventListenerElementID = eventListenerElementID
-    this.#eventFunction = eventFunction
+    this.#setEventName(eventName)
+    this.#setEventListenerElementID(eventListenerElementID)
+    this.#setEventFunction(eventFunction)
+  }
+
+  /**
+   * Sets the new event name.
+   *
+   * @throws {Error} - If invalid event name is provided.
+   * @param {string} newEventName - The new event name.
+   */
+  #setEventName (newEventName) {
+    if (typeof (newEventName) !== 'string') {
+      throw new Error('Invalid type of event name, expected type: string')
+    }
+
+    this.#eventName = newEventName
+  }
+
+  /**
+   * Sets the new event listener element id.
+   *
+   * @throws {Error} - If invalid event listener element id is provided.
+   * @param {string} newEventListenerElementID - The new event listener element id.
+   */
+  #setEventListenerElementID (newEventListenerElementID) {
+    if (typeof (newEventListenerElementID) !== 'string') {
+      throw new Error('Invalid type of event listener element id, expected type: string')
+    }
+
+    // If no prefix is defined, we define it here for the user.
+    if (newEventListenerElementID.charAt(0) !== '#') {
+      newEventListenerElementID = '#' + newEventListenerElementID
+    }
+
+    this.#eventListenerElementID = newEventListenerElementID
+  }
+
+  /**
+   * Sets the new EventFunction.
+   *
+   * @throws {Error} - If new event function is not a function.
+   * @param {Function} newEventFunction - The new function.
+   */
+  #setEventFunction (newEventFunction) {
+    if (!(newEventFunction instanceof Function)) {
+      throw new Error('Invalid type of event function, expected type: function')
+    }
+
+    this.#eventFunction = newEventFunction
   }
 
   /**
