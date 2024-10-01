@@ -6,10 +6,11 @@
  * random html code supplied from elsewhere!
  *
  * @param {string} htmlCode - The HTML code.
- * @returns {HTMLTemplateElement} - The created HTML element.
+ * @param {string} elementType - The element type.
+ * @returns {HTMLElement} - The created HTML element.
  */
-export const createHtmlTemplateElement = function (htmlCode) {
-  const element = document.createElement('template')
+export const createHtmlElement = function (htmlCode, elementType) {
+  const element = document.createElement(elementType)
   element.innerHTML = htmlCode
   return element
 }

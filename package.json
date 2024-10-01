@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --environment jsdom --root ./tests/"
   },
   "repository": {
     "url": "git+https://github.com/SimonDaraf/simplified-web-components.git",
@@ -24,6 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.3.0",
-    "rollup": "^4.22.4"
+    "jsdom": "^25.0.1",
+    "rollup": "^4.22.4",
+    "vitest": "^2.1.1"
   }
 }

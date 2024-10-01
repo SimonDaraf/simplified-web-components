@@ -17,6 +17,8 @@ The SimplifiedWebComponents package simplifies the process of using custom web c
 
 * ### Dependencies <a name="dependencies"></a>
   * `ES2020`
+  * `(dev) jsdom`
+  * `(dev) vitest`
   * `(dev): @rollup/plugin-node-resolve`
   * `(dev): rollup`
 
