@@ -23,7 +23,8 @@ The SimplifiedWebComponents package simplifies the process of using custom web c
 ## Installation <a name="installation"></a>
 
 * ### Using NPM <a name="using-npm"></a>
-  `npm i simplified-web-components`
+  * `npm i simplified-web-components`
+  * import using: `import { WebComponent, EventContainer } from 'simplified-web-components'`
 
 ## Documentation <a name="documentation"></a>
 
