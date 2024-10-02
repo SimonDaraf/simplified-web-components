@@ -7,8 +7,8 @@ The WebComponent class allows users to more easily create user-defined elements 
 
 ### `constructor(componentName : string, html : HTMLTemplateElement|string|URL, css : HTMLTemplateElement|string|URL) : WebComponent`
 * `componentName : string` - The name to be used when initializing the HTML element.
-* `html : HTMLTemplateElement|string` - A template element containing the HTML content. | The local URL to the html file as a string / [URL](https://nodejs.org/api/url.html#the-whatwg-url-api).
-* `css : HTMLTemplateElement|string` - A template element containing the CSS content. | The local URL to the CSS file as a string / [URL](https://nodejs.org/api/url.html#the-whatwg-url-api).
+* `html : HTMLTemplateElement|string|URL` - A template element containing the HTML content. | The local URL to the html file as a string | [URL](https://nodejs.org/api/url.html#the-whatwg-url-api).
+* `css : HTMLTemplateElement|string|URL` - A template element containing the CSS content. | The local URL to the CSS file as a string | [URL](https://nodejs.org/api/url.html#the-whatwg-url-api).
 
 ## Properties
 
