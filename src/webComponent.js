@@ -6,7 +6,7 @@ import * as htmlHelper from './htmlHelper.js'
 /**
  * The Web Component class builds and defines a web component.
  */
-export class WebComponent {
+export class WebComponent extends EventTarget {
   /**
    * The component name, used to initialize the component in the DOM.
    *
@@ -50,6 +50,7 @@ export class WebComponent {
    * @param {HTMLTemplateElement|string|URL} css - The css to render | The url to the CSS file as a string | The url to the CSS file as a URL.
    */
   constructor (componentName, html, css) {
+    super()
     this.#setComponentName(componentName)
     this.#setHtml(html)
     this.#setCss(css)

@@ -1,7 +1,6 @@
-# WebComponent : Class
+# WebComponent : Class - *extends EventTarget*
 ## Description
-The WebComponent class allows users to more easily create user-defined elements based on the web component practice, removing most of the duplicate code needed for every custom web component.
-[Read more...](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)
+The WebComponent class allows users to more easily create user-defined elements based on the web component practice, removing most of the duplicate code needed for every custom web component. [Read more...](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)
 
 ## Construction
 
