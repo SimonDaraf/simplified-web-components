@@ -57,7 +57,7 @@ export class EventContainer {
    * @param {string} newEventListenerElementID - The new event listener element id.
    */
   #setEventListenerElementID (newEventListenerElementID) {
-    if (newEventListenerElementID === undefined) {
+    if (newEventListenerElementID === undefined || newEventListenerElementID === '') {
       this.#eventListenerElementID = 'shadow-root'
     }
 
