@@ -44,7 +44,7 @@ export const htmlElementConstructor = function (componentName, html, css, events
        */
       connectedCallback () {
         for (const event of events) {
-          const targetElement = this.shadowRoot.querySelector(event.eventListenerElementID)
+          const targetElement = this.#getTargetElement(event.eventListenerElementID)
 
           targetElement.addEventListener(event.eventName, event.eventFunction, { signal: this.#abortController.signal })
         }
@@ -55,6 +55,14 @@ export const htmlElementConstructor = function (componentName, html, css, events
        */
       disconnectedCallback () {
         this.#abortController.abort()
+      }
+
+      #getTargetElement (targetID) {
+        if (targetID === 'shadow-root') {
+          return this
+        } else {
+          return this.shadowRoot.querySelector(targetID)
+        }
       }
     }
   )

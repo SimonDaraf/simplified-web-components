@@ -6,7 +6,7 @@ The EventContainer is used to encapsulate events and any relating properties so 
 
 ### `constructor(eventName : string, eventListenerElementID : string, eventFunction : Function)`
 * `eventName : string` - The name of the event to listen for.
-* `eventListenerElementID : string` - The id of the element to attach the listener to.
+* `eventListenerElementID : string` - The id of the element to attach the listener to, if omitted attach listener to custom component.
 * `eventFunction : Function` - The function to invoke when the event is fired.
 
 ## Properties
@@ -15,7 +15,7 @@ The EventContainer is used to encapsulate events and any relating properties so 
 The name of the event to listen for.
 
 ### `eventListenerElementID : string`
-The id of the element to attach the listener to.
+The id of the element to attach the listener to, if omitted attach listener to custom component.
 
 ### `eventFunction : Function`
 The function to invoke when the event is fired.

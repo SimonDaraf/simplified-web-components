@@ -27,7 +27,7 @@ export class EventContainer {
    * Constructs a new instance of the EventContainer.
    *
    * @param {string} eventName - The name of the event to listen for.
-   * @param {string} eventListenerElementID - The id of the element to catch the event.
+   * @param {string} eventListenerElementID - The id of the element to catch the event, if omitted attach listener to custom component.
    * @param {Function} eventFunction - The function to invoke when the event is catched, the function passed needs an argument for the event object.
    */
   constructor (eventName, eventListenerElementID, eventFunction) {
@@ -57,6 +57,10 @@ export class EventContainer {
    * @param {string} newEventListenerElementID - The new event listener element id.
    */
   #setEventListenerElementID (newEventListenerElementID) {
+    if (newEventListenerElementID === undefined) {
+      this.#eventListenerElementID = 'shadow-root'
+    }
+
     if (typeof (newEventListenerElementID) !== 'string') {
       throw new Error('Invalid type of event listener element id, expected type: string')
     }
