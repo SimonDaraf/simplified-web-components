@@ -79,3 +79,19 @@ test('Assert invalid event function', () => {
   // Act, Assert
   expect(() => { return new EventContainer('click', '#test', invalidFunction) }).toThrowError()
 })
+
+test('Assert custom element selection if id is omitted', () => {
+  // Arrange
+  const empty = ''
+  const undef = undefined
+
+  const expected = 'shadow-root'
+
+  // Act
+  const eventContainerOne = new EventContainer('click', empty, () => { return true })
+  const eventContainerTwo = new EventContainer('click', undef, () => { return true })
+
+  // Assert
+  expect(eventContainerOne.eventListenerElementID).toStrictEqual(expected)
+  expect(eventContainerTwo.eventListenerElementID).toStrictEqual(expected)
+})

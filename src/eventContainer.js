@@ -59,6 +59,7 @@ export class EventContainer {
   #setEventListenerElementID (newEventListenerElementID) {
     if (newEventListenerElementID === undefined || newEventListenerElementID === '') {
       this.#eventListenerElementID = 'shadow-root'
+      return
     }
 
     if (typeof (newEventListenerElementID) !== 'string') {
